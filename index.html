@@ -1,6 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Role Play Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="reset.css"> -->
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+</head>
+
+<body style="background-image: url('assets/images/Starwars-Background.jpg'); background-size: cover">
+
+    <div class="container">
+        <!-- <img  src="C:\Users\pavit\Documents\UCF\Home-Works\unit-4-game\assets\images\Starwars-Background.jpg" alt="RPG"> -->
+        <div class="row text-center" style="color:greenyellow">
+            <div class="col-12 mt-2">
+                <h1>Star Wars RPG</h1>
+            </div>
+        </div>
+
+        <div class="row text-left text-light">
+            <h4>Available Characters</h4>
+        </div>
+
+        <div class="row text-light">
+
+            <div class="col-2">
+                <img src="assets/images/char1.jpeg" class="img-fluid">
+                <!-- <img src="assets/images/AAYLA_SECURA.jpeg" class="img-fluid"> -->
+                <!-- <h2>This is col 1</h2> -->
+            </div>
+
+            <div class="col-2">
+                <img src="assets/images/char2.jpeg" class="img-fluid">
+                <!-- <h2>This is col 2</h2> -->
+            </div>
+
+            <div class="col-2">
+                <img src="assets/images/char3.jpeg" class="img-fluid">
+                <!-- <h2>This is col 2</h2> -->
+            </div>
+
+            <div class="col-2">
+                <img src="assets/images/char4.jpeg" class="img-fluid">
+                <!-- <h2>This is col 2</h2> -->
+            </div>
+
+        </div>
+
+
+
+        <!-- Enemies section. This will be created from the .js file. -->
+        <div class="row text-left text-light">
+            <h4>Enemies Available to Attack</h4>
+        </div>
+        <div class="row text-light">
+            <div class="col-2">
+                <img id="R2C1" class="img-fluid">
+            </div>
+
+            <div class="col-2">
+                <img id="R2C2" class="img-fluid">
+            </div>
+
+            <div class="col-2">
+                <img id="R2C3" class="img-fluid">
+            </div>
+        </div>
+
+        <!-- Fight section  -->
+        <div class="row text-left text-light">
+            <div class="col-2>">
+                <h4>Your Character</h4>
+            </div>
+
+            <div class="text-center col-8">
+                <button id="attackButton" type="button" class="btn btn-danger">Attack</button>
+            </div>
+
+            <div class="col-2">
+                <h4>Defender</h4>
+            </div>
+        </div>
+
+        <div class="row text-light">
+            <div class="col-2">
+                <img id="myChar" class="img-fluid">
+            </div>
+
+            <div class="col-2 offset-7">
+                <img id="defender" class="img-fluid">
+            </div>
+        </div>
+
+
+    </div>
+
+
+</body>
+
 </html>
