@@ -13,82 +13,73 @@
 
 <body style="background-image: url('assets/images/BG1.jpg'); background-repeat: no-repeat">
 
-    <div class="container-fluid">
+    <div class="container-fluid" style="color:yellow">
         <!-- <img  src="C:\Users\pavit\Documents\UCF\Home-Works\unit-4-game\assets\images\Starwars-Background.jpg" alt="RPG"> -->
-        <div class="row text-center" style="color:greenyellow">
+        <div class="row text-center" >
             <div class="col-12 mt-2">
                 <h1>Star Wars RPG</h1>
             </div>
         </div>
 
-        <div class="row text-left text-light">
-            <h4 id="R1Header">Available Characters</h4>
+        <div class="row text-left">
+            <h5 id="R1Header">Available Characters</h5>
         </div>
 
-        <div id="ROW1" class="row text-light">
+         <div id="ROW1" class="row">
 
-            <div id="R1C1"  class="col-2">
+            <div id="R1C1" class="col-2">
                 <img src="assets/images/char1.jpeg" class="img-fluid">
-                <!-- <img src="assets/images/AAYLA_SECURA.jpeg" class="img-fluid"> -->
-                <!-- <h2>This is col 1</h2> -->
+                <p></p>
             </div>
 
             <div id="R1C2" class="col-2 ">
-                <img  src="assets/images/char2.jpeg" class="img-fluid">
-                <!-- <h2>This is col 2</h2> -->
+                <img src="assets/images/char2.jpeg" class="img-fluid">
+                <p></p>
             </div>
 
-            <div id="R1C3"  class="col-2">
+            <div id="R1C3" class="col-2">
                 <img src="assets/images/char3.jpeg" class="img-fluid">
-                <!-- <h2>This is col 2</h2> -->
+                <p></p>
             </div>
 
             <div id="R1C4" class="col-2">
-                <img  src="assets/images/char4.jpeg" class="img-fluid">
-                <!-- <h2>This is col 2</h2> -->
+                <img src="assets/images/char4.jpeg" class="img-fluid">
+                <p></p>
             </div>
 
         </div>
 
         <!-- Fight section  -->
-        <div class="row text-left text-light">
-            <div class="col-2>">
-                <h4>Your Character</h4>
-            </div>
-
-            <div class="col-2 offset-8">
-                <h4>Defender</h4>
-            </div>
-        </div>
-
-        <div class="row text-light">
+        <div class="row mt-1">
             <div class="col-2">
+                <h5>Your Character</h5>
                 <img id="myChar" class="img-fluid">
-                <h4 id="myCharHealth"></h4>
+                <p id="myCharHealth"></p>
             </div>
 
             <div class="col-2 offset-7">
+                <h5>Defender</h5>
                 <img id="defender" class="img-fluid">
-                <h4 id="defenderHealth"></h4>
+                <p id="defenderHealth"></p>
             </div>
         </div>
 
-        <div class="row text-light">
-                <div class="text-center col-12">
-                        <button id="attackButton" type="button" class="btn btn-danger">Attack</button>
-                </div>
+        <div class="row">
+            <div class="text-center col-12">
+                <button id="attackButton" type="button" class="btn btn-danger">Attack</button>
+            </div>
         </div>
 
-        <div class="row text-light">
-                <div class="text-left col-4">
-                        <h4 id="battleStatus"></h4>
-                </div>
+        <div class="row">
+            <div class="text-left col-4">
+                <h5 id="battleStatus"></h5>
+            </div>
         </div>
 
     </div>
 
     <script src="assets/javascript/game.js"></script>
-<!-- 
+    <!-- 
     <script>
         initialize();
     </script> -->

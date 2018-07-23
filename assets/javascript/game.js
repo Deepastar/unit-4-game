@@ -10,6 +10,7 @@ $(document).ready(function () {
     var charsMap = createCharacterMap(availChars);
 
     $("#attackButton").hide();
+    setHealthValue(availChars, charsMap);
 
     //When Selecting Images from Row1
     selectYourCharacter(availChars, charsMap);
@@ -17,6 +18,15 @@ $(document).ready(function () {
     //Create Attack event
     createAttackEvent(charsMap);
 });
+
+function setHealthValue(availChars, charsMap) {
+    $(availChars).each(function () {
+        var colId = $(this).attr("id");
+        var health = charsMap[colId]["health"];
+        var paragraph = $(this).children("p");
+        $(paragraph).text("Health:" + health);
+    });
+}
 
 function selectYourCharacter(availChars, charsMap) {
     $(availChars).each(function () {
@@ -117,6 +127,7 @@ function createAttackEvent(charsMap) {
             $("#attackButton").hide();
             var availChars = $("#ROW1").children("div");
 
+            console.log("total chars" + availChars.length);
             if (availChars.length > 0) {
                 $("#battleStatus").text("" + myCharId + " Defeated " + defenderId + "! Select a new Enemy");
                 selectYourEnemy(availChars, charsMap);
