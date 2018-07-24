@@ -138,10 +138,10 @@ function createAttackEvent(charsMap) {
             var availChars = $("#ROW1").children("div");
 
             if (availChars.length > 0) {
-                $("#battleStatus").text("" + myCharId + " Defeated " + defenderId + "! Select a new Enemy");
+                $("#battleStatus").text("" + myCharId + " defeats " + defenderId + "! Select a new Enemy.");
                 selectYourEnemy(availChars, charsMap);
             } else {
-                $("#battleStatus").text("" + myCharId + " WINS!!!! " + defenderId + "GAME OVER!");
+                $("#battleStatus").text("" + myCharId + " WINS!!!! " + "GAME OVER!");
             }
             $("#battleStatus").show();
         } else if ((charsMap[defenderId]["health"] > 0 && charsMap[myCharId]["health"] <= 0)
@@ -149,7 +149,7 @@ function createAttackEvent(charsMap) {
                 && charsMap[defenderId]["health"] > charsMap[myCharId]["health"] )
     ) {
             $("#attackButton").hide();
-            $("#battleStatus").text(" " + myCharId + "IS Defeated" + defenderId + "! GAME OVER!");
+            $("#battleStatus").text(" " + myCharId + " is Defeated by " + defenderId + "! GAME OVER!");
             $("#battleStatus").show();
         }
     });
