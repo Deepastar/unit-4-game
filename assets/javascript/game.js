@@ -10,6 +10,8 @@ $(document).ready(function () {
     var charsMap = createCharacterMap(availChars);
 
     $("#attackButton").hide();
+    $("#finalHeader").hide();
+
     setHealthValue(availChars, charsMap);
 
     //When Selecting Images from Row1
@@ -69,6 +71,12 @@ function selectYourEnemy(availEnemies, charsMap) {
             $("#defenderHealth").text("Health: " + charsMap[$(this).attr("id")]["health"]);
             $(this).remove();
 
+            console.log("total chars :" + $("#ROW1").children("div").length);
+
+            if($("#ROW1").children("div").length == 0 ){
+               $("#charHeader").hide();
+               $("#finalHeader").show();
+            }
             $(availEnemies).each(function () {
                 $(this).off("click");
             });
@@ -82,7 +90,7 @@ function createCharacterMap(availChars) {
     var charsMap = {};
     var healthArray = [200, 175, 125, 100];
     var attackArray = [5, 10, 15, 20];
-    var counterArray = [10, 20, 30, 40];
+    var counterArray = [10, 15, 20, 25];
 
     var i = 0;
     $(availChars).each(function () {
@@ -122,12 +130,13 @@ function createAttackEvent(charsMap) {
         $("#myCharHealth").text("Health: " + charsMap[myCharId]["health"]);
         $("#defenderHealth").text("Health: " + charsMap[defenderId]["health"]);
 
-
-        if (charsMap[defenderId]["health"] <= 0 && charsMap[myCharId]["health"] > 0) {
+        if ((charsMap[defenderId]["health"] <= 0 && charsMap[myCharId]["health"] > 0)
+        || (charsMap[defenderId]["health"] < 0 && charsMap[myCharId]["health"] < 0 
+                && charsMap[myCharId]["health"] > charsMap[defenderId]["health"] )
+    ) {
             $("#attackButton").hide();
             var availChars = $("#ROW1").children("div");
 
-            console.log("total chars" + availChars.length);
             if (availChars.length > 0) {
                 $("#battleStatus").text("" + myCharId + " Defeated " + defenderId + "! Select a new Enemy");
                 selectYourEnemy(availChars, charsMap);
@@ -135,9 +144,12 @@ function createAttackEvent(charsMap) {
                 $("#battleStatus").text("" + myCharId + " WINS!!!! " + defenderId + "GAME OVER!");
             }
             $("#battleStatus").show();
-        } else if (charsMap[defenderId]["health"] > 0 && charsMap[myCharId]["health"] <= 0) {
+        } else if ((charsMap[defenderId]["health"] > 0 && charsMap[myCharId]["health"] <= 0)
+        || (charsMap[defenderId]["health"] < 0 && charsMap[myCharId]["health"] < 0 
+                && charsMap[defenderId]["health"] > charsMap[myCharId]["health"] )
+    ) {
             $("#attackButton").hide();
-            $("#battleStatus").text("" + myCharId + "IS Defeated" + defenderId + "! GAME OVER!");
+            $("#battleStatus").text(" " + myCharId + "IS Defeated" + defenderId + "! GAME OVER!");
             $("#battleStatus").show();
         }
     });
